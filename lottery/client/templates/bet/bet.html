@@ -1,0 +1,298 @@
+<!--Index-->
+<template name="lottery_bet">
+    <div class="animated fadeIn">
+        <p>
+        <div class="row">
+            <div class="col-sm-3">
+                <button type="button" class="btn btn-primary insert">{{fa "plus"}} Add New</button>
+                <div class="pull-right">
+                    <input type="checkbox" class="js-switch"/>
+                    <label>Filter</label>
+                </div>
+            </div>
+
+            <div class="col-sm-5">
+                <div class="col-sm-4" style="padding-right:1px;padding-left:0px;">
+                    <div class="form-group">
+                        <input type="text" id="dateFilter" name="dateFilter" class="form-control dateFilter"
+                               placeholder="Date">
+                    </div>
+                </div>
+                <div class="col-sm-8" style="padding-right:1px;padding-left:0px;">
+                    <div class="col-sm-5" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <!--<input type="text" name="tmpTime"  class="form-control" placeholder="Time">-->
+                            <select id="timeFilter" class="form-control timeFilter" name="timeFilter"
+                                    style="width: 100%;"
+                                    placeholder="Time">
+                                {{#each timeList}}
+                                    <option value="{{value}}">{{label}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-5" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="number" id="pageFilter" name="pageFilter" placeholder="Page"
+                                   class="form-control pageFilter">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="pull-right" style="display: inline">
+                    <small>
+                    <!--{{#if templateSubReady "subbet"}}-->
+                        {{#with agent}}
+                            <a href="#" class="js-agentInfo">
+                                ID: {{_id}} |
+                                Name: {{name}}
+                            </a>
+                            {{lightbox url=photoUrl title=name}}
+                        {{/with}}
+                            <!-- {{else}}
+                        {{> iconLoading}}
+                    {{/if}}-->
+                    </small>
+                </div>
+            </div>
+        </div>
+
+        </p>
+        {{> tabular table=Lottery.TabularTable.Bet selector=tabularSelector class="table table-striped table-bordered table-condensed table-hover"}}
+    </div>
+</template>
+
+<!--Action-->
+<template name="lottery_betAction">
+    {{#tabularAction}}
+        <li><a href="#" class="update">{{fa "pencil"}} Update</a></li>
+        <li><a href="#" class="remove">{{fa "remove"}} Remove</a></li>
+        <li><a href="#" class="show">{{fa "eye"}} Show</a></li>
+    {{/tabularAction}}
+</template>
+
+<!--Insert-->
+<template name="lottery_betInsert">
+    <div class="loading-box hidden">
+        <div class='uil-ring-css' style='transform:scale(0.99);'>
+            <div></div>
+        </div>
+        <div align='center'>Loading...</div>
+    </div>
+    {{#autoForm collection=Lottery.Collection.Bet id="lottery_betInsert" type="insert" resetOnSuccess=false}}
+
+        <div class="navbar-fixed-top" style="margin-top: 52px; margin-left: 40px; margin-right: 60px;">
+            <div class="panel panel-info">
+                <div class="panel-heading">ID: {{agent._id}} | Name: {{agent.name}}
+                    <div class="pull-right">
+                        <input type="checkbox" class="js-switch-highLightInsert"/>
+                        <label>HighLight</label>
+                    </div>
+                    <span><p
+                            style="color: #999;font-family: 'khmer os fasthand'; text-align: center;"> សូមចុច Ctrl +
+                        Enter
+                        ដើម្បីធ្វើការ Save&nbsp;</p></span>
+
+                </div>
+
+                <div class="panel-body">
+                    <div class="form-group col-md-12">
+                        <div class="row">
+                            {{> afQuickField name="agentId" type="hidden" value=agent._id}}
+                            <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                {{> afQuickField name="betDate" value=betDate type="text" }}
+                            </div>
+                            <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                {{> afQuickField name="page" value=defaultPage class="page"}}
+                            </div>
+                            <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                {{> afQuickField name="line" value=defaultLine}}
+                            </div>
+                            <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                {{> afQuickField name="time" value=defaultTime}}
+                                {{> afQuickField name="branchId"  type="hidden"}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Item Temporary-->
+        <div style="margin-top: 220px">
+            {{> lottery_betItem}}
+        </div>
+
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary save" {{cssClassForSubmit}}>{{fa "floppy-o"}} Save</button>
+            <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+        </div>
+
+    {{/autoForm}}
+</template>
+
+<!--Update-->
+<template name="lottery_betUpdate">
+    <div class="loading-box hidden">
+        <div class='uil-ring-css' style='transform:scale(0.99);'>
+            <div></div>
+        </div>
+        <div align='center'>Loading...</div>
+    </div>
+    {{#if templateSubReady}}
+        {{#autoForm collection=Lottery.Collection.Bet doc=data id="lottery_betUpdate" type="update"}}
+            <div class="navbar-fixed-top" style="margin-top: 52px; margin-left: 40px; margin-right: 60px;">
+                <div class="panel panel-info">
+                    <div class="panel-heading">ID: {{agent._id}} | Name: {{agent.name}}
+                        <div class="pull-right">
+                            <input type="checkbox" class="js-switch-highLightUpdate"/>
+                            <label>HighLight</label>
+                        </div>
+                        <span><p
+                                style="color: #999;font-family: 'khmer os fasthand'; text-align: center;"> សូមចុច Ctrl +
+                            Enter
+                            ដើម្បីធ្វើការ Save&nbsp;</p></span>
+
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group col-md-12">
+                            <div class="row">
+                                {{> afQuickField name="agentId" type="hidden"}}
+                                <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                    {{> afQuickField name="betDate" type="text"}}
+                                </div>
+                                <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                    {{> afQuickField name="page"}}
+                                </div>
+                                <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                    {{> afQuickField name="line"}}
+                                </div>
+                                <div class="col-md-3" style="padding-right: 1px;padding-left: 0px">
+                                    {{> afQuickField name="time"}}
+                                    {{> afQuickField name="branchId" type="hidden"}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 220px">
+                <!--Item Temporary-->
+                {{> lottery_betItem data.items}}
+            </div>
+            <div class="pull-right">
+                <button type="submit" class="btn btn-primary save" {{cssClassForSubmit}}>{{fa "floppy-o"}} Save</button>
+                <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+            </div>
+
+        {{/autoForm}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>
+
+<!--Show-->
+<template name="lottery_betShow">
+    {{#if templateSubReady}}
+        {{#with data}}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <label>
+                        <div class="col-md-12"><label>Id :</label>{{_id}}</div>
+                    </label>
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                        <tr>
+                            <td><label>Agent</label></td>
+                            <td>: {{_agent.name}}</td>
+                            <td><label>Time</label></td>
+                            <td>: {{time}}</td>
+                            <td><label>Page</label></td>
+                            <td>: {{page}}</td>
+                        </tr>
+                        <tr>
+                            <td><label>Date</label></td>
+                            <td>: {{betDate}}</td>
+                            <td><label>Line</label></td>
+                            <td>: {{line}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <table class="table table-striped" style="border-collapse: collapse !important;">
+                <thead>
+                <tr>
+                    <th>Number</th>
+                    <th>Amount</th>
+                    <th>Post</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each items}}
+                    <tr>
+                        <td>
+                            {{number}}
+                        </td>
+                        <td>
+                            {{amount}} {{{currencyId}}}
+                        </td>
+                        <td>
+                            {{post}}
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+            <div class="row col-md-12">
+                <div class="col-md-6" style="text-align: right">
+                    <label>Total</label>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    <label>2D</label>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    <label>3D</label>
+                </div>
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-6" style="text-align: right">
+                    <label style="font-family: 'Khmer OS Fasthand';font-size: 12;">៛</label>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalRiel2D}}
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalRiel3D}}
+                </div>
+
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-6" style="text-align: right">
+                    <label>$</label>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalDollar2D}}
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalDollar3D}}
+                </div>
+
+            </div>
+            <div class="row col-md-12">
+                <div class="col-md-6" style="text-align: right">
+                    <label><span>&#3647;</span></label>
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalBath2D}}
+                </div>
+                <div class="col-md-3" style="text-align: center">
+                    {{totalBath3D}}
+                </div>
+            </div>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>

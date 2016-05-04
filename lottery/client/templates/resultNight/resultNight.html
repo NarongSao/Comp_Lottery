@@ -1,0 +1,724 @@
+<!--Insert-->
+<template name="lottery_resultNightInsert">
+    {{#autoForm collection=Lottery.Collection.ResultNight id="lottery_resultNightInsert" type="insert"}}
+        <div class="form-group col-md-9">
+            <div class="panel panel-info">
+                <div class="panel-heading">Result <span><p
+                        style="color: #999;font-family: 'khmer os fasthand'; text-align: center;"> សូមចុច Ctrl + Enter
+                    ដើម្បីធ្វើការ Save&nbsp;</p></span></div>
+                <div class="panel-body">
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="">2D</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">1/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A1" label=false}}
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">2/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A2" label=false}}
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">3/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A3" label=false}}
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">4/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A4" label=false}}
+                        </div>
+
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="">3D</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">5/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A5" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">6/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A6" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for=""></label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">7/A</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="A7" label=false}}
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="">4D</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">8</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T8" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">9</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T9" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">10</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T10" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">11</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T11" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">12</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T12" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">13</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T13" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">14</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T14" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">15</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T15" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">16</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T16" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">17</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T17" label=false}}
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <label for="">5D</label>
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">18</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T18" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">19</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T19" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">20</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T20" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">21</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T21" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">22</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T22" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">23</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T23" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">24</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T24" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">25</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T25" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">26</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T26" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">27/B</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="B27" label=false}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">C</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="C" value=c label=false readonly=true}}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">D</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="D" value=d label=false readonly=true}}
+                            {{> afQuickField name="resultId"  label=false type="hidden"}}
+                        </div>
+                    </div>
+
+                    <div class="pull-right">
+                        <button type="submit" class="save btn btn-primary">{{fa "floppy-o"}} Save</button>
+                        <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="form-group col-md-3">
+            <div class="panel panel-success">
+                <div class="panel-heading">Info</div>
+                <div class="panel-body">
+                    {{> afQuickField name="resultDate" type="text"}}
+                    {{> afQuickField name="time" type="text" value=defaultTime readonly=true}}
+                </div>
+            </div>
+        </div>
+    {{/autoForm}}
+</template>
+
+<!--Update-->
+<template name="lottery_resultNightUpdate">
+    {{#if templateSubReady}}
+        {{#autoForm collection=Lottery.Collection.ResultNight doc=this id="lottery_resultNightUpdate" type="update"}}
+            <div class="form-group col-md-9">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Result <span><p
+                            style="color: #999;font-family: 'khmer os fasthand'; text-align: center;"> សូមចុច Ctrl +
+                        Enter ដើម្បីធ្វើការ Save&nbsp;</p></span></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="">2D</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">1/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A1" label=false}}
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for=""></label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">2/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A2" label=false}}
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for=""></label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">3/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A3" label=false}}
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for=""></label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">4/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A4" label=false}}
+                            </div>
+
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="">3D</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">5/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A5" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for=""></label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">6/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A6" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for=""></label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">7/A</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="A7" label=false}}
+                            </div>
+                        </div>
+
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="">4D</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">8</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T8" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">9</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T9" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">10</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T10" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">11</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T11" label=false}}
+                            </div>
+                        </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">12</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T12" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">13</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T13" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">14</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T14" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">15</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T15" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">16</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T16" label=false}}
+                        </div>
+                    </div><div class="row">
+                        <div class="col-sm-3">
+
+                        </div>
+                        <div class="col-sm-3">
+                            <label for="">17</label>
+                        </div>
+                        <div class="col-sm-6">
+                            {{> afQuickField name="T17" label=false}}
+                        </div>
+                    </div>
+                        <hr>
+
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <label for="">5D</label>
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">18</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T18" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">19</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T19" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">20</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T20" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">21</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T21" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">22</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T22" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">23</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T23" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">24</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T24" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">25</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T25" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">26</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="T26" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">27/B</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="B27" label=false}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">C</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="C" value=c label=false readonly=true}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-3">
+
+                            </div>
+                            <div class="col-sm-3">
+                                <label for="">D</label>
+                            </div>
+                            <div class="col-sm-6">
+                                {{> afQuickField name="D" value=d label=false readonly=true}}
+                                {{> afQuickField name="resultId"  label=false type="hidden"}}
+                            </div>
+                        </div>
+
+                        <div class="pull-right">
+                            <button type="submit" class="save btn btn-primary">{{fa "floppy-o"}} Save</button>
+                            <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+                        </div>                    </div>
+                </div>
+            </div>
+            <div class="form-group col-md-3">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Info</div>
+                    <div class="panel-body">
+                        {{> afQuickField name="resultDate" type="text"}}
+                        {{> afQuickField name="time" type="text" value=defaultTime readonly=true}}
+                    </div>
+                </div>
+            </div>
+        {{/autoForm}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>
+
+<!--Show-->
+<template name="lottery_resultNightShow">
+    {{#if templateSubReady}}
+        {{#with data}}
+            <dl class="dl-horizontal">
+                <dt>Id</dt>
+                <dd>{{_id}}</dd>
+                <dt>Date</dt>
+                <dd>{{moFormat resultDate "YYYY-MM-DD"}}</dd>
+            </dl>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>

@@ -1,0 +1,93 @@
+<!--Journal Temporary-->
+<template name="lottery_locationDetail">
+
+    <div class="panel panel-info">
+        <div class="panel-heading">
+            <h3 class="panel-title"><div style="height: 20px;"> <b>Location Detail</b></div></h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                    <div class="form-group">
+                        <input type="text" step="1" name="tmpDate" class="form-control tmpDate" placeholder="Date">
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                    <div class="form-group">
+                        <input type="number" step="0.01" name="tmpOffValue2D" class="form-control tmpOffValue2D"
+                               placeholder="Off Value 2D">
+                    </div>
+                </div>
+                <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                    <div class="form-group">
+                        <input type="number" step="0.02" name="tmpOffValue3D" class="form-control tmpOffValue3D"
+                               placeholder="Off Value 3D">
+                    </div>
+                </div>
+                <div class="col-sm-6" style="padding-right:1px;padding-left:0px;">
+                    <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="number" step="0.03" name="tmpWin2D" class="form-control tmpWin2D"
+                                   placeholder="Win 2D">
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="number" step="0.04" name="tmpWin3D" class="form-control tmpWin3D"
+                                   placeholder="Win 3D">
+                        </div>
+                    </div>
+                    <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="number" step="0.05" name="tmpShare" class="form-control tmpShare"
+                                   placeholder="Share">
+                        </div>
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="number" step="0.06" name="tmpAdd" class="form-control tmpAdd"
+                                   placeholder="Add">
+                        </div>
+                    </div>
+                    <div class="col-sm-1" style="padding-right:0px;padding-left:0px;">
+                        <button type="button" class="btn btn-primary addItem" {{cssClassForAddMore}}>+</button>
+                    </div>
+                </div>
+
+            </div>
+            <hr>
+                {{#each detail}}
+                <div class="row">
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        {{> afQuickField name=indexDate value=date id=indexdate readonly="true" label=false class="input-sm date" }}
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        {{> afQuickField name=indexOffValue2D value=offValue2D id=indexOffValue2D label=false class="input-sm offValue2D"}}
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        {{> afQuickField name=indexOffValue3D value=offValue3D id=indexOffValue3D  label=false class="input-sm offValue3D"}}
+                    </div>
+                    <div class="col-sm-6" style="padding-right:1px;padding-left:0px;">
+
+                        <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                            {{> afQuickField name=indexWin2D value=win2D id=indexWin2D  label=false class="input-sm win2D"}}
+                        </div>
+                        <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                            {{> afQuickField name=indexWin3D value=win3D id=indexWin3D label=false class="input-sm win3D"}}
+                        </div>
+                        <div class="col-sm-3" style="padding-right:1px;padding-left:0px;">
+                            {{> afQuickField name=indexShare value=share id=indexShare  label=false class="input-sm share"}}
+                        </div>
+                        <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                            {{> afQuickField name=indexAdd value=add id=indexAdd  label=false class="input-sm add"}}
+                        </div>
+                        <div class="col-sm-1" style="padding-right:1px;padding-left:0px;">
+                            <button type="button" class="btn btn-danger removeItem input-sm">-</button>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+
+        </div>
+    </div>
+</template>

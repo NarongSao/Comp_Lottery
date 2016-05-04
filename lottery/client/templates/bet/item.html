@@ -1,0 +1,152 @@
+<!--Item Temporary-->
+<template name="lottery_betItem">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            Bet List
+
+        </div>
+        <div class="panel-body">
+            {{#each items}}
+                <div class="col-md-12">
+                    <div class="row list">
+                        <div class="col-sm-5"
+                             style="padding-right:1px;padding-left:0px;">
+                            {{> afQuickField name=indexNumber value=number  class="js-number" label=false}}</div>
+                        <div class="col-sm-2"
+                             style="padding-right:1px;padding-left:0px;">{{> afQuickField name=indexAmount value=amount class="js-amount" label=false}}</div>
+                        <div class="col-sm-2"
+                             style="padding-right:1px;padding-left:0px;">{{> afQuickField name=indexPost  id=indexPost value=post type="text" readonly="true" class="js-post" label=false}}</div>
+                        {{> afQuickField name=indexBetDetailId  id=indexBetDetailId value=betDetailId  type="hidden" class="js-time" label=false}}
+                        {{> afQuickField name=indexUniqueNumber id=indexUniqueNumber value=indexUniqueNumber  type="hidden" class="js-index" label=false}}
+                        <div class="col-sm-2"
+                             style="padding-right:1px;padding-left:0px;">{{> afQuickField name=indexCurrency  id=indexCurrency value=currencyId  type="text" readonly="true" class="js-currency" label=false}}</div>
+
+                        <div class="col-sm-1" style="padding-right:1px;padding-left:0px;">
+                            <button type="button" class="btn btn-danger js-remove-item btn-block ">-</button>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+
+            <div class="form-group col-md-12">
+                <hr>
+                <div class="row">
+                    <div class="col-sm-5" style="padding-right:1px;padding-left:0px;">
+                        <b>Number</b>
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        <b>Amount</b>
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        <b>Post</b>
+                    </div>
+                    <div class="col-sm-2" style="padding-right:1px;padding-left:0px;">
+                        <b>Currency</b>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-5" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group" style="width: 100%">
+                            <input type="text" name="tmpNumber" style="width: 13cm !important; display: inline"
+                                   class="form-control tmpNumber" placeholder="Number" data-role="tagsinput">
+                        </div>
+                    </div>
+                    <div class="col-md-2" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <input type="text" step="1" name="tmpAmount" class="form-control tmpAmount"
+                                   placeholder="Amount">
+                        </div>
+                    </div>
+
+                    <div class="col-md-2" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <!--<input type="text" name="tmpPost" class="form-control" placeholder="Post">-->
+                            <select id="tmpPost" step="0.1" class="form-control tmpPost" name="tmpPost"
+                                    style="width: 100%;"
+                                    placeholder="Post">
+                                {{#each postList}}
+                                    <option value="{{value}}">{{label}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-2" style="padding-right:1px;padding-left:0px;">
+                        <div class="form-group">
+                            <!--<input type="text" name="tmpTime"  class="form-control" placeholder="Time">-->
+                            <select id="tmpCurrency" step="0.2" class="form-control tmpCurrency" name="tmpCurrency"
+                                    style="width: 100%;"
+                                    placeholder="Currency">
+                                {{#each currencyList}}
+                                    <option value="{{value}}">{{label}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-1" style="padding-right:0px;padding-left:0px;">
+                        <!--<a href="#add-item"><button type="button" id="add-item" class="btn js-add-item btn-primary btn-block " {{cssClassForAddMore}}>+
+                        </button></a>-->
+
+                        <a href="#add-item" type="button" id="add-item"
+                           class="btn btn-primary btn-block {{cssClassForAddMore}}">+</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-9" align="right"></div>
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    <label>2D</label>
+                </div>
+                <div class="col-sm-6">
+                    <label>3D</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9" align="right"><label>Total Riel :</label></div>
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalRiel2D" type="text" label=false value=totalRiel2D readonly=true}}
+                </div>
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalRiel3D" type="text" label=false value=totalRiel3D readonly=true}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9" align="right"><label>Dollar :</label></div>
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalDollar2D" type="text" label=false value=totalDollar2D readonly=true}}
+                </div>
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalDollar3D" type="text" label=false value=totalDollar3D readonly=true}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-9" align="right"><label>Bath :</label></div>
+        <div class="col-sm-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalBath2D" type="text" label=false value=totalBath2D readonly=true}}
+                </div>
+                <div class="col-sm-6">
+                    {{> afQuickField name="totalBath3D" type="text" label=false value=totalBath3D readonly=true}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>

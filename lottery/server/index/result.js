@@ -1,0 +1,1 @@
+Lottery.Collection.Result._ensureIndex({resultDate:1, time:1}, {unique: 1});

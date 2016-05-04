@@ -1,0 +1,1 @@
+Template.lottery_home.helpers({});

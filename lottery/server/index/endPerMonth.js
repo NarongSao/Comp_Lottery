@@ -1,0 +1,1 @@
+Lottery.Collection.EndPerMonth._ensureIndex({endDate:1}, {unique: 1});

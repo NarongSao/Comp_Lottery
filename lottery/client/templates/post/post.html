@@ -1,0 +1,83 @@
+<!--Index-->
+<template name="lottery_post">
+    <div class="animated fadeIn">
+    <p>
+        <button type="button" class="btn btn-primary js-insert">{{fa "plus"}} Add New</button>
+    </p>
+
+    {{> tabular table=Lottery.TabularTable.Post  class="table table-striped table-bordered table-condensed table-hover-pointer"}}
+    </div>
+</template>
+
+<!--Action-->
+<template name="lottery_postAction">
+    {{#tabularAction}}
+        <li><a href="#" class="js-update">{{fa "pencil"}} Update</a></li>
+        <li><a href="#" class="js-remove">{{fa "remove"}} Remove</a></li>
+        <li><a href="#" class="js-show">{{fa "eye"}} Show</a></li>
+    {{/tabularAction}}
+</template>
+
+<!--Insert-->
+<template name="lottery_postInsert">
+    {{#autoForm collection=Lottery.Collection.Post id="lottery_postInsert" type="insert"}}
+        <div class="row">
+            <div class="col-md-12">
+                {{> afQuickField name="postName"}}
+                {{> afQuickField name="payment2D"}}
+                {{> afQuickField name="payment3D"}}
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+                <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+            </div>
+
+        </div>
+    {{/autoForm}}
+</template>
+
+<!--Update-->
+<template name="lottery_postUpdate">
+    <!--Built-in template sub ready by all-->
+    {{#if Template.subscriptionsReady}}
+        {{#autoForm collection=Lottery.Collection.Post id="lottery_postUpdate" doc=data type="update"}}
+            <div class="row">
+                <div class="col-md-12">
+                    {{> afQuickField name="postName"}}
+                    {{> afQuickField name="payment2D"}}
+                    {{> afQuickField name="payment3D"}}
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+                    <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+                </div>
+
+
+            </div>
+        {{/autoForm}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+
+</template>
+
+<!--Show-->
+<template name="lottery_postShow">
+    <!--Customer template sub ready by all-->
+    {{#if templateSubReady}}
+        {{#with data}}
+            <dl class="dl-horizontal">
+                <dt>ID:</dt>
+                <dd>{{_id}}</dd>
+                <dt>Post Name:</dt>
+                <dd>{{postName}}</dd>
+                <dt>Payment 2D:</dt>
+                <dd>{{payment2D}}</dd>
+                <dt>Payment 3D:</dt>
+                <dd>{{payment3D}}</dd>
+            </dl>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>

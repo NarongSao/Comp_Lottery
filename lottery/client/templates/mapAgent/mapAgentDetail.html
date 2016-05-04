@@ -1,0 +1,30 @@
+<!--Journal Temporary-->
+<template name="lottery_mapAgentDetail">
+    <div class="row">
+        <div class="col-sm-11" style="padding-right:1px;padding-left:0px;">
+            <div class="form-group">
+                <select id="tmpAgent" class="tmpAgent" name="tmpAgent" style="width: 100%;">
+                    {{#each agentList}}
+                        <option value="{{id}} | {{name}}">{{id}} | {{name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-1" style="padding-right:0px;padding-left:0px;">
+            <button type="button" class="btn btn-primary addItem" {{cssClassForAddMore}}>+</button>
+        </div>
+    </div>
+
+    <hr>
+    {{#each detail}}
+        <div class="row">
+            <div class="col-sm-11" style="padding-right:1px;padding-left:0px;">
+                {{> afQuickField name=indexAgent value=agent id=indexAgent readonly="true" label=false class="input-sm agent" }}
+            </div>
+            <div class="col-sm-1" style="padding-right:1px;padding-left:0px;">
+                <button type="button" class="btn btn-danger removeItem input-sm">-</button>
+            </div>
+        </div>
+    {{/each}}
+
+</template>

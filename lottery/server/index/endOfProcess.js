@@ -1,0 +1,1 @@
+Lottery.Collection.EndOfProcess._ensureIndex({closeDate:1,time: 1,agentId: 1}, {unique: 1});

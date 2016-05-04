@@ -1,0 +1,1 @@
+Lottery.Collection.Bet._ensureIndex({betDate:1, page:1, line: 1,time: 1,agentId: 1}, {unique: 1});

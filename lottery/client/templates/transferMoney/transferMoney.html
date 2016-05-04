@@ -1,0 +1,89 @@
+<!--Index-->
+<template name="lottery_transferMoney">
+    <div class="animated fadeIn">
+    <p>
+        <button type="button" class="btn btn-primary js-insert">{{fa "plus"}} Add New</button>
+    </p>
+
+    {{> tabular table=Lottery.TabularTable.TransferMoney  class="table table-striped table-bordered table-condensed table-hover-pointer"}}
+    </div>
+</template>
+
+<!--Action-->
+<template name="lottery_transferMoneyAction">
+    {{#tabularAction}}
+        <li><a href="#" class="js-update">{{fa "pencil"}} Update</a></li>
+        <li><a href="#" class="js-remove">{{fa "remove"}} Remove</a></li>
+        <li><a href="#" class="js-show">{{fa "eye"}} Show</a></li>
+    {{/tabularAction}}
+</template>
+
+<!--Insert-->
+<template name="lottery_transferMoneyInsert">
+    {{#autoForm collection=Lottery.Collection.TransferMoney id="lottery_transferMoneyInsert" type="insert"}}
+        <div class="row">
+            <div class="col-md-12">
+                {{> afQuickField name="transferDate"}}
+                {{> afQuickField name="transferFrom"}}
+                {{> afQuickField name="transferTo"}}
+                {{> afQuickField name="amount"}}
+                {{> afQuickField name="currencyId"}}
+            </div>
+            <div class="col-md-12">
+                <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+                <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+            </div>
+
+        </div>
+    {{/autoForm}}
+</template>
+
+<!--Update-->
+<template name="lottery_transferMoneyUpdate">
+    <!--Built-in template sub ready by all-->
+    {{#if Template.subscriptionsReady}}
+        {{#autoForm collection=Lottery.Collection.TransferMoney id="lottery_transferMoneyUpdate" doc=data type="update"}}
+            <div class="row">
+                <div class="col-md-12">
+                    {{> afQuickField name="transferDate"}}
+                    {{> afQuickField name="transferFrom"}}
+                    {{> afQuickField name="transferTo"}}
+                    {{> afQuickField name="amount"}}
+                    {{> afQuickField name="currencyId"}}
+                </div>
+                <div class="col-md-12">
+                    <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+                    <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+                </div>
+
+
+            </div>
+        {{/autoForm}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+
+</template>
+
+<!--Show-->
+<template name="lottery_transferMoneyShow">
+    <!--Customer template sub ready by all-->
+    {{#if templateSubReady}}
+        {{#with data}}
+            <dl class="dl-horizontal">
+                <dt>TransferDate:</dt>
+                <dd>{{transferDate}}</dd>
+                <dt>From :</dt>
+                <dd>{{transferFrom}}</dd>
+                <dt>To:</dt>
+                <dd>{{transferTo}}</dd>
+                <dt>Amount:</dt>
+                <dd>{{amount}}</dd>
+                <dt>Currency:</dt>
+                <dd>{{currencyId}}</dd>
+            </dl>
+        {{/with}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>

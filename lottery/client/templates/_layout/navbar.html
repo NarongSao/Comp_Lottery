@@ -1,0 +1,100 @@
+<template name="lottery_navbar">
+    <li class="{{isActiveRoute name='lottery.home'}}"><a href="{{pathFor 'lottery.home'}}"><i class="fa fa-home"></i> Home</a></li>
+    <li class="{{isActiveRoute name='lottery.agent'}}">
+        <a href="{{pathFor 'lottery.agent'}}"><i class="fa fa-plus"></i> Agent</a>
+    </li>
+    {{#if isInRole 'data-insert,data-update,data-remove' 'Lottery'}}
+<!--
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                Data <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="{{isActiveRoute name='lottery.result'}}">
+                    <a href="{{pathFor 'lottery.result'}}">Result</a>
+                </li>
+                &lt;!&ndash;<li class="{{isActiveRoute name='lottery.bet'}}">&ndash;&gt;
+                &lt;!&ndash;<a href="{{pathFor 'lottery.bet'}}">Order</a>&ndash;&gt;
+                &lt;!&ndash;</li>&ndash;&gt;
+            </ul>
+        </li>
+-->
+        <li class="{{isActiveRoute name='lottery.result'}}">
+            <a href="{{pathFor 'lottery.result'}}"><i class="fa fa-eye-slash"></i> Result</a>
+        </li>
+    {{/if}}
+
+    <!--Reports-->
+    {{#if isInRole 'report' 'Lottery'}}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fa fa-file-pdf-o"></i> Reports <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <li class="{{isActiveRoute name='lottery.betReport'}}">
+                    <a href="{{pathFor 'lottery.betReport'}}"><i class="fa fa-file-pdf-o"></i> Bet</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.winLossReport'}}">
+                    <a href="{{pathFor 'lottery.winLossReport'}}"><i class="fa fa-file-pdf-o"></i> Win/Loss</a>
+                </li>
+                <hr>
+                <li class="{{isActiveRoute name='lottery.dailySummaryReport'}}">
+                    <a href="{{pathFor 'lottery.dailySummaryReport'}}"><i class="fa fa-file-pdf-o"></i> Daily Summary</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.dailyReport'}}">
+                    <a href="{{pathFor 'lottery.dailyReport'}}"><i class="fa fa-file-pdf-o"></i> Daily By Agent</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.dailyByDayReport'}}">
+                    <a href="{{pathFor 'lottery.dailyByDayReport'}}"><i class="fa fa-file-pdf-o"></i> Daily By Day</a>
+                </li>
+                <hr>
+                <li class="{{isActiveRoute name='lottery.betNumberReport'}}">
+                    <a href="{{pathFor 'lottery.betNumberReport'}}"><i class="fa fa-file-pdf-o"></i> Bet Number</a>
+                </li>
+                <!--<li class="{{isActiveRoute name='lottery.customerReport'}}">
+                    <a href="{{pathFor 'lottery.customerReport'}}">Customer (Browser View)</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.customerExcelReport'}}">
+                    <a href="{{pathFor 'lottery.customerExcelReport'}}">Customer (Excel)</a>
+                </li>-->
+            </ul>
+        </li>
+    {{/if}}
+
+    <!--Settings-->
+    {{#if isInRole 'setting' 'Lottery'}}
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                <i class="fa fa-cogs"></i> Settings <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+                <!--<li class="{{isActiveRoute name='cpanel.exchange'}}">
+                    <a href="{{pathFor 'cpanel.exchange'}}">Exchange</a>
+                </li>-->
+                <li class="{{isActiveRoute name='lottery.transferMoney'}}">
+                    <a href="{{pathFor 'lottery.transferMoney'}}"><i class="fa fa-money"></i> Transfer Money</a>
+                </li>
+                <hr>
+                <li class="{{isActiveRoute name='lottery.endOfProcess'}}">
+                    <a href="{{pathFor 'lottery.endOfProcess'}}"><i class="fa fa-stop"></i> End Per Day</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.endPerMonth'}}">
+                    <a href="{{pathFor 'lottery.endPerMonth'}}"><i class="fa fa-stop"></i> End Per Month</a>
+                </li>
+                <hr>
+                <li class="{{isActiveRoute name='lottery.location'}}">
+                    <a href="{{pathFor 'lottery.location'}}"><i class="fa fa-flag"></i> Location</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.mapAgent'}}">
+                    <a href="{{pathFor 'lottery.mapAgent'}}"><i class="fa fa-navicon"></i> Map Agent</a>
+                </li>
+                <li class="{{isActiveRoute name='lottery.rank'}}">
+                    <a href="{{pathFor 'lottery.rank'}}"><i class="fa fa-flash"></i> Rank</a>
+                </li>
+                <!--<li class="{{isActiveRoute name='lottery.post'}}">
+                    <a href="{{pathFor 'lottery.post'}}">Post</a>
+                </li>-->
+            </ul>
+        </li>
+    {{/if}}
+</template>

@@ -1,0 +1,30 @@
+<!--Index-->
+<template name="lottery_endOfProcess">
+    <div class="animated fadeIn">
+        <p>
+            <button type="button" class="btn btn-primary insert">{{fa "plus"}} Add New</button>
+        </p>
+
+        {{> tabular table=Lottery.TabularTable.EndOfProcess  class="table table-striped table-bordered table-condensed table-hover"}}
+    </div>
+</template>
+
+<!--Action-->
+<template name="lottery_endOfProcessAction">
+    <button class="btn btn-danger remove"><a href="#">{{fa "remove"}}</a></button>
+</template>
+<!--Insert-->
+<template name="lottery_endOfProcessInsert">
+    {{#autoForm collection=Lottery.Collection.EndOfProcess id="lottery_endOfProcessInsert" type="insert"}}
+
+        {{> afQuickField name="closeDate" type="text" }}
+        {{> afQuickField name="time" }}
+        {{> afQuickField name="agentId"}}
+
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+            <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+        </div>
+
+    {{/autoForm}}
+</template>

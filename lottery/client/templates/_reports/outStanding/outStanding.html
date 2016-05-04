@@ -1,0 +1,73 @@
+<!-- Form -->
+
+<template name="lottery_outStandingReport">
+    {{#autoForm schema=Lottery.Schema.OutStandingReport id="lottery_outStandingReport" action="outStandingReportGen" target="_blank"}}
+        <div class="row">
+            <div class="col-md-6">
+
+                {{> afQuickField name='branchId'}}
+                {{> afQuickField name='date'}}
+
+               <!-- <label>Agent: <span class="label label-primary">{{agentId.name}}</span></label>
+                <div class="input-group  select2-bootstrap-append">
+                    {{> afFieldInput name="agentId" value=agentId._id readonly=true}}
+                    <span class="input-group-addon">
+                      <a href="#" class="clear-agent">
+                          {{fa "eraser"}}
+                      </a>
+                    </span>
+                    <span class="input-group-addon">
+
+                        <a href="#" data-toggle="modal" data-target=".tabularModal">
+                            {{fa "list-alt"}}
+                        </a>
+                    </span>
+                </div>-->
+                <br>
+            </div>
+            <div class="col-md-6">
+                <!--{{> afQuickField name='country'}}-->
+                {{> afQuickField name='currencyId'}}
+                <button type="submit" class="btn btn-primary">{{fa "file-text"}} Generate</button>
+                <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+
+            </div>
+        </div>
+        <!--{{>tabularModal}}-->
+    {{/autoForm}}
+</template>
+
+
+<!-- Generate -->
+<template name="lottery_outStandingReportGen">
+    <!--Is ready-->
+    {{#if data}}
+        {{#reportTpl options}}
+
+            {{#with data}}
+
+                <!--Title-->
+                <!--{{#with title}}
+                    <div class="title">
+                        <div class="title-1x-kh-muol">{{khName}}</div>
+                        <div class="title-1x">{{enName}}</div>
+                        <div><u>Bet Report</u></div>
+                        <div class="title-2x">{{enAddress}}</div>
+                    </div>
+                {{/with}}-->
+
+                {{{content}}}
+
+
+            {{/with}}
+
+            <!--Sign-->
+            <!--{{> signFooter}}-->
+
+        {{/reportTpl}}
+    {{else}}
+        {{> loading}}
+    {{/if}}
+</template>
+
+
