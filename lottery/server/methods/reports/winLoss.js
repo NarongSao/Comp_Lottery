@@ -158,8 +158,6 @@ Meteor.methods({
                     labelLossDollar3D +
                     labelLossBath3D +
                     "</tr>";
-
-
                 resultE.forEach(function (reE) {
 
                     var valueStakeRiel2D = self.currencyId.indexOf("KHR") > -1 ? "<td style='border-left: solid 1px;border-right: solid 1px;' align='center'><font size='2'><b>" + reE.totalRiel2D + "</b></font></td>" : "";

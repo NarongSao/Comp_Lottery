@@ -198,7 +198,6 @@ Meteor.methods({
             selectorLo.time = self.time;
             selectorLo.betDetailDate = new Date(self.date);
             var rightLo = Lottery.Collection.BetDetail.find(selectorLo).fetch();
-
             rightLo.forEach(function (obj) {
                 betDetailList.push(obj._id);
             })
@@ -360,7 +359,7 @@ Meteor.methods({
                                                 }
                                             } else if (detail.number.length == 3) {
                                                 if (resultLo3D.indexOf(detail.number) > -1) {
-                                                    resultA3D.forEach(function (timeRight) {
+                                                    resultLo3D.forEach(function (timeRight) {
                                                         if (timeRight == detail.number) {
                                                             returnTotalRiel3DPerPage += detail.amount;
 
