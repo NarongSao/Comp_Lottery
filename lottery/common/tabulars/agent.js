@@ -31,7 +31,9 @@ Lottery.TabularTable.Agent = new Tabular.Table({
                     return null;
                 } else {
                     var img = Files.findOne(val);
-                    return lightbox(img.url(), doc._id, doc.name);
+                    if(img){
+                        return lightbox(img.url(), doc._id, doc.name);
+                    }
                 }
             }
         }
