@@ -1,10 +1,11 @@
 <template name="lottery_navbar">
-    <li class="{{isActiveRoute name='lottery.home'}}"><a href="{{pathFor 'lottery.home'}}"><i class="fa fa-home"></i> Home</a></li>
+    <li class="{{isActiveRoute name='lottery.home'}}"><a href="{{pathFor 'lottery.home'}}"><i class="fa fa-home"></i>
+        Home</a></li>
     <li class="{{isActiveRoute name='lottery.agent'}}">
         <a href="{{pathFor 'lottery.agent'}}"><i class="fa fa-plus"></i> Agent</a>
     </li>
     {{#if isInRole 'data-insert,data-update,data-remove' 'Lottery'}}
-<!--
+        <!--
         <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                 Data <span class="caret"></span>
@@ -39,7 +40,8 @@
                 </li>
                 <hr>
                 <li class="{{isActiveRoute name='lottery.dailySummaryReport'}}">
-                    <a href="{{pathFor 'lottery.dailySummaryReport'}}"><i class="fa fa-file-pdf-o"></i> Daily Summary</a>
+                    <a href="{{pathFor 'lottery.dailySummaryReport'}}"><i class="fa fa-file-pdf-o"></i> Daily
+                        Summary</a>
                 </li>
                 <li class="{{isActiveRoute name='lottery.dailyReport'}}">
                     <a href="{{pathFor 'lottery.dailyReport'}}"><i class="fa fa-file-pdf-o"></i> Daily By Agent</a>
@@ -90,6 +92,11 @@
                 </li>
                 <li class="{{isActiveRoute name='lottery.rank'}}">
                     <a href="{{pathFor 'lottery.rank'}}"><i class="fa fa-flash"></i> Rank</a>
+                </li>
+
+                <li class="{{isActiveRoute name='lottery.removeData'}}">
+                    <a href="{{pathFor 'lottery.removeData'}}" style="color: #ac2925"><i class="fa fa-flash"></i> Remove
+                        Data</a>
                 </li>
                 <!--<li class="{{isActiveRoute name='lottery.post'}}">
                     <a href="{{pathFor 'lottery.post'}}">Post</a>

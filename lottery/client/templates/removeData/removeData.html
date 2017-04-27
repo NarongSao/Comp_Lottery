@@ -1,0 +1,29 @@
+<!--Index-->
+<template name="lottery_removeData">
+    <div class="animated fadeIn">
+        <p>
+            <button type="button" class="btn btn-primary insert">{{fa "plus"}} Add New</button>
+        </p>
+
+        {{> tabular table=Lottery.TabularTable.RemoveData  class="table table-striped table-bordered table-condensed table-hover"}}
+    </div>
+</template>
+
+<!--Action-->
+<template name="lottery_removeDataAction">
+    {{#tabularAction}}
+    {{/tabularAction}}
+</template>
+<!--Insert-->
+<template name="lottery_removeDataInsert">
+    {{#autoForm collection=Lottery.Collection.RemoveData id="lottery_removeDataInsert" type="insert"}}
+
+        {{> afQuickField name="removeDate" type="text" }}
+
+        <div class="pull-right">
+            <button type="submit" class="btn btn-primary">{{fa "floppy-o"}} Save</button>
+            <button type="reset" class="btn btn-default">{{fa "refresh"}} Reset</button>
+        </div>
+
+    {{/autoForm}}
+</template>
