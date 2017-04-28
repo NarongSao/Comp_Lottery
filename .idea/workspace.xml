@@ -1,22 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e480ecd2-fdbc-43a6-a53e-39c72f0cf733" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/client/routers/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/client/templates/removeData/removeData.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/client/templates/removeData/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/common/collections/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/common/tabulars/remove Data.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/server/collections_cache/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/server/collections_hook/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/server/publications/removeData.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/lottery/server/security/removeData.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_npm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/lottery.iml" afterPath="$PROJECT_DIR$/.idea/lottery.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lottery/client/templates/_layout/navbar.html" afterPath="$PROJECT_DIR$/lottery/client/templates/_layout/navbar.html" />
-    </list>
+    <list default="true" id="e480ecd2-fdbc-43a6-a53e-39c72f0cf733" name="Default" comment="" />
     <ignored path="lottery.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -484,7 +469,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../microfis" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="HbShouldOpenHtmlAsHb" value="enabled" />
     <property name="js.meteor.project" value="true" />
@@ -600,12 +585,12 @@
       <workItem from="1489538669079" duration="3388000" />
       <workItem from="1492501074531" duration="5972000" />
       <workItem from="1492563075868" duration="2858000" />
-      <workItem from="1493260729617" duration="5221000" />
+      <workItem from="1493260729617" duration="5282000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23701000" />
+    <option name="totallyTimeSpent" value="23762000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-11" width="1922" height="1029" extended-state="6" />
