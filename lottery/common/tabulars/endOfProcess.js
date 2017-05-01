@@ -1,6 +1,6 @@
 // Customer
 Lottery.TabularTable.EndOfProcess = new Tabular.Table({
-    name: "lottery_endOfProcessList",
+    name: "lottery_endOfProcess",
     collection: Lottery.Collection.EndOfProcess,
     pagingType: "full_numbers",
     autoWidth: false,

@@ -25,6 +25,7 @@ indexTpl.onCreated(function () {
     createNewAlertify(['endOfProcess']);
 });
 
+
 insertTpl.onRendered(function () {
     configCloseDateOnRendered();
 });
@@ -56,7 +57,7 @@ indexTpl.events({
                         null
                     );
 
-                }else{
+                } else {
                     alertify.error('You already End Per Month!!!');
                 }
             } else {
