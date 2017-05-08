@@ -32,7 +32,7 @@ Lottery.Collection.Bet.after.insert(function (userId, doc) {
 
             data.branchId = doc.branchId;
 
-            data._id = idGenerator.genWithPrefix(Lottery.Collection.BetDetail, prefix, 30);
+
             var betDetailId = Meteor.call('lottery_betDetailInsert', data);
 
             obj.betDetailId = betDetailId;
@@ -68,7 +68,7 @@ Lottery.Collection.Bet.after.update(function (userId, doc, fieldNames, modifier,
                 data.branchId = modifier.$set.branchId;
 
                 Lottery.Collection.BetDetail.remove(obj.betDetailId);
-                data._id = idGenerator.genWithPrefix(Lottery.Collection.BetDetail, prefix, 30);
+              
                 var betDetailId = Meteor.call('lottery_betDetailInsert', data);
 
                 obj.betDetailId = betDetailId;
