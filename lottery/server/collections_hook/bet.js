@@ -10,6 +10,7 @@ Lottery.Collection.Bet.before.insert(function (userId, doc) {
 
 Lottery.Collection.Bet.after.insert(function (userId, doc) {
     Meteor.defer(function () {
+        var itemsOrigin = [];
         var items = [];
         var prefix = doc.agentId;
         _.each(doc.items, function (obj, key) {
@@ -36,9 +37,16 @@ Lottery.Collection.Bet.after.insert(function (userId, doc) {
             var betDetailId = Meteor.call('lottery_betDetailInsert', data);
 
             obj.betDetailId = betDetailId;
-            items.push(obj);
+            itemsOrigin.push(obj);
 
         });
+
+        itemsOrigin.forEach(function (obj) {
+            var detailDoc = Lottery.Collection.BetDetail.findOne({idOrigin: obj.betDetailId});
+            obj.betDetailId = detailDoc._id;
+            items.push(obj);
+        })
+
         // doc.items = items;
         Lottery.Collection.Bet.direct.update(doc._id, {$set: {items: items}})
     });
@@ -49,6 +57,8 @@ Lottery.Collection.Bet.after.update(function (userId, doc, fieldNames, modifier,
     Meteor.defer(function () {
 
         var items = [];
+        var itemsOrigin = [];
+
         _.each(modifier.$set.items, function (obj, key) {
             if (obj != null) {
                 var data = {};
@@ -68,13 +78,19 @@ Lottery.Collection.Bet.after.update(function (userId, doc, fieldNames, modifier,
                 data.branchId = modifier.$set.branchId;
 
                 Lottery.Collection.BetDetail.remove(obj.betDetailId);
-              
-                var betDetailId = Meteor.call('lottery_betDetailInsert', data);
 
+                var betDetailId = Meteor.call('lottery_betDetailInsert', data);
                 obj.betDetailId = betDetailId;
-                items.push(obj);
+                itemsOrigin.push(obj);
             }
         });
+
+        itemsOrigin.forEach(function (obj) {
+            var detailDoc = Lottery.Collection.BetDetail.findOne({idOrigin: obj.betDetailId});
+            obj.betDetailId = detailDoc._id;
+            items.push(obj);
+        })
+
         // modifier.$set.items = items;
         Lottery.Collection.Bet.direct.update(doc._id, {$set: {items: items}});
     });

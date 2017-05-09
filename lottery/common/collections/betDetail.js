@@ -16,14 +16,14 @@ Lottery.Schema.BetDetail = new SimpleSchema({
     line: {
         type: Number,
         label: 'Line'
-    },time: {
+    }, time: {
         type: String,
         label: 'Time'
-    },currencyId: {
+    }, currencyId: {
         type: String,
         label: 'Time'
     },
-    post:{
+    post: {
         type: String
     },
     items: {
@@ -51,6 +51,10 @@ Lottery.Schema.BetDetail = new SimpleSchema({
     branchId: {
         type: String,
         label: "Branch"
+    },
+    idOrigin: {
+        type: String,
+        optional: true
     }
 });
 
@@ -58,5 +62,5 @@ Lottery.Schema.BetDetail = new SimpleSchema({
 Lottery.Collection.BetDetail.attachSchema(Lottery.Schema.BetDetail);
 
 /*
-// Attach soft remove
-Lottery.Collection.BetDetail.attachBehaviour('softRemovable');*/
+ // Attach soft remove
+ Lottery.Collection.BetDetail.attachBehaviour('softRemovable');*/
