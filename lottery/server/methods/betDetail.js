@@ -10,7 +10,7 @@ Meteor.methods({
         dataEntry.branchId = data.branchId;
         dataEntry.currencyId = data.currencyId;
 
-        dataEntry._id = data._id;
+
         //Must correct this condition
 
         var isThreeDB = false;
